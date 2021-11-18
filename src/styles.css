@@ -1,0 +1,120 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --cell-size: 90px;
+    --mark-size: calc(var(var(--cell-size)*.9))
+}
+
+body {
+    margin: 20PX;
+    background-color: #1C4774;
+}
+
+.board {
+    width: 90vw;
+    height: 90vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(5, auto);
+    background-color: #4075AD;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font: bold;
+    background-color: #9AD0E2;
+}
+
+.cell_aleatorio {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font: bold;
+    color: red;
+    background-color: #F3F1E2;
+}
+
+.cell:first-child,
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3),
+.cell:nth-child(4),
+.cell:nth-child(5) {
+    border-top: none;
+}
+
+.cell:nth-child(5n +1) {
+    border-left: none;
+}
+
+.cell_aleatorio:nth-child(5n +1) {
+    border-left: none;
+}
+
+.cell:nth-child(5n + 5) {
+    border-right: none;
+}
+
+.cell_aleatorio:nth-child(5n + 5) {
+    border-right: none;
+}
+
+.cell_aleatorio:last-child,
+.cell_aleatorio:nth-child(46),
+.cell_aleatorio:nth-child(47),
+.cell_aleatorio:nth-child(48),
+.cell_aleatorio:nth-child(49),
+.cell_aleatorio:nth-child(50) {
+    border-bottom: none;
+}
+
+.winning-message {
+    width: 90vw;
+    height: 6vh;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    background-color: rgba(0, 0, 0, .9);
+    justify-content: flex-end;
+    align-content: flex-end;
+    align-items: center;
+    color: #F3F1E2;
+    font-size: 2rem;
+    flex-direction: column;
+    padding: 6px;
+}
+
+.winning-message button {
+    font-size: 2rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: 4px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.winning-message button:hover {
+    background-color: green;
+    color: white;
+    border-color: white;
+}
+
+#restartButton {
+    background-color: #F7D35C;
+}
